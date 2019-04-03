@@ -44,6 +44,7 @@ router.post('/login', (req, res) => {
       });
 });
 
+// generates a new token when a user logs in successfully
 function generateToken(user) {
     const payload = {
       subject: user.id,
