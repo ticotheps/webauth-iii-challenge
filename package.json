@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "## Topics",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0"
+  },
   "devDependencies": {
     "nodemon": "^1.18.10"
   },
