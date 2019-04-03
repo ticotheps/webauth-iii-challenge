@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const Users = require('../users/users-model.js');
 const secret = require('../api/secrets').jwtSecret;
 
-// allows a user to register a new 'username', 'password', and 'department' 
+// allows a user to register a new credentials to be added to the database
 router.post('/register', (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 5);
@@ -20,8 +20,7 @@ router.post('/register', (req, res) => {
       });
 });
 
-// allows a user to gain access to the list of 'users' on the database
-// if the provided token is valid
+// gives the user a valid token if the credentials provided match the credentials in the database
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
   
